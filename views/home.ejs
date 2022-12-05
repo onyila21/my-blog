@@ -1,0 +1,24 @@
+
+<%- include("partials/header"); -%>
+
+<div class="form-group compose-btn-container">
+    <a class="btn btn-info btn-lg compose-btn" href="compose">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        Add New Blog
+    </a>
+</div>
+
+  <%  posts.forEach(function(post){ %>
+
+  <div class="feature-box col-lg-4">
+        <h1><%=post.title%></h1>
+        <p>
+        <%=post.content.substring(0, 100) + " ..."%>
+        <a href="/posts/<%=post._id%>">Read More</a>
+        <!-- it was changed from title to_id in order to render the coorect post when u click on read more -->
+        </p>
+</div>
+
+        <% }) %>
+
+<%- include("partials/footer"); -%>
